@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #cfb076;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 20px;
+}
+.img{
+  background-image: url(https://th.bing.com/th/id/OIP.-jI-USmLktmDxG2lQawuQwAAAA?rs=1&pid=ImgDetMain);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px; 
+  padding: 50px 20px;
+  text-align: center;
+  max-width: 100%;
+  width: 800px;
+  height: 390px;
+  position: relative;
+
+}
+
+.container {
+   
+  background-color: #ffffffad;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+  padding: 50px 20px;
+  text-align: center;
+  max-width: 100%;
+  width: 800px;
+  position: absolute;
+}
+
+h3 {
+  margin: 0;
+  letter-spacing: 2px;
+  color: #3a7c53;
+
+ 
+}
+
+.joke {
+  font-size: 30px;
+  letter-spacing: 1px;
+  line-height: 40px;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+.btn {
+  background-color: #3a7c53;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+  padding: 14px 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.btn:active {
+  transform: scale(0.98);
+  background-color: #686de0;
+}
+
+.btn:focus {
+  outline: 0;
+}
