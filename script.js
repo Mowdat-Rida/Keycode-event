@@ -1,37 +1,24 @@
-const jokeEl = document.getElementById('joke')
-const jokeBtn = document.getElementById('jokeBtn')
+const insert = document.getElementById('insert')
 
-jokeBtn.addEventListener('click', generateJoke)//generateJoke is passed without parentheses, meaning the function itself is passed, not the result of calling it.
+window.addEventListener('keydown', (event) => {//(event): The parameter representing the event object that contains details about the event that occurred.
+  insert.innerHTML = `
+  <div class="key">
+  ${event.key === ' ' ? 'Space' : event.key} 
+  <smallboxes>event.key</smallboxes>
+</div>
 
-generateJoke()
+<div  class="key ">
+  ${event.keyCode}
+  <smallboxes>event.keyCode</smallboxes>
+</div>
 
-// USING ASYNC/AWAIT
-async function generateJoke() {
-  const config = {
-    headers: { //An object specifying HTTP headers for the request.
-      Accept: 'application/json', //Accept header tells the server what content type the client expects.
-      //'application/json' indicates that the client expects JSON data in response.
-    },
-  }
+<div class="key">
+  ${event.code}
+  <smallboxes>event.code</smallboxes>
+</div>
+  `
+})
+//Template Literal Placeholder: Allows embedding JavaScript expressions inside the string. Whatever is inside $ {} will be evaluated and inserted into the string.
+//If event.key is a space, it returns the string 'Space'; otherwise, it returns the actual key value.
+//Inserts the value of event.keyCode into the HTML. keyCode is a numerical representation of the key pressed.
 
-  const res = await fetch('https://icanhazdadjoke.com', config)//fetch is a built-in function that makes HTTP requests.
-
-  const data = await res.json()//Allows the use of await within the function, enabling synchronous-like code for handling asynchronous operations (like fetching data).
-//res.json() is a method that parses the response body as JSON.
-  jokeEl.innerHTML = data.joke
-}
-
-// USING .then()
-// function generateJoke() {
-//   const config = {
-//     headers: {
-//       Accept: 'application/json',
-//     },
-//   }
-
-//   fetch('https://icanhazdadjoke.com', config)
-//     .then((res) => res.json())
-//     .then((data) => {
-//       jokeEl.innerHTML = data.joke
-//     })
-// }
